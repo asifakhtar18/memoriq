@@ -1,0 +1,33 @@
+.side-bar{
+    background-color: #DECBCB;
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 0;
+   
+}
+
+
+.user_name{
+    display: flex;
+    align-items: center;
+}
+
+#no-user{
+    width: 60px;
+}
+
+.profile-avatar{
+    margin: 10px;
+}
+
+
+@media (max-width: 980px) {
+
+    .side-bar{   
+        position: relative;   
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+}

@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+  
+}
+
+body{
+  background-color: #DECBCB;
+}
+
+.App{
+  background-color: #DECBCB;
+
+  
+
+}
+
+.body{
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+
+
+#auth{
+  margin: 0px 20px;
+  
+}
+
+a{
+  text-decoration: none;
+}
+
+#seacrh-bar{
+  margin-right: 30px ;
+}
+
+.app-signup{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+@media (max-width: 980px) {
+  .body{
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .App{
+    margin: 0;
+    padding: 0;
+  }
+
+  
+
+ 
+}

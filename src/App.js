@@ -1,25 +1,79 @@
-import logo from './logo.svg';
-import './App.css';
+import React , {useState , useEffect} from 'react';
+import Post from './Post';
+import Profile from './profile';
+import Header from './Header';
+import './styles/App.css';
+import { db  , auth } from './firebase'
+
 
 function App() {
+  const [posts , setPosts] = useState([])
+  const [user , setUser] = useState(null);
+ 
+
+ 
+
+  useEffect(()=>{
+
+    //fetching all post from firebase db
+
+    db.collection('post').orderBy('timestamp' , 'desc').onSnapshot(snapshot => {
+      setPosts(snapshot.docs.map(doc => ({
+        id : doc.id,
+        data : doc.data()
+      })))
+    })
+  }, []) 
+
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser)=>{
+         if(authUser){      
+             setUser(authUser)
+         } else {
+             setUser(null);
+         }
+
+     })
+
+     return () => {
+         unsubscribe()
+     };
+   } , [user])
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header  />
+      
+
+      <div className='body'>
+
+      
+        
+
+        <div>
+        {
+          posts.map (({id , data }) => (
+            <Post 
+              key={id}
+              user={user}  
+              postId={id} 
+              username={data.username} 
+              caption={data.caption} 
+              img={data.img} />  
+          ))
+        }
+
+        </div>
+      </div>
+
+      
+   
+      
     </div>
-  );
+  )
 }
 
 export default App;
