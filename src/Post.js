@@ -1,5 +1,6 @@
 import React, { useEffect, useState ,  } from "react";
 import { Avatar } from "@mui/material";
+import { Button }  from '@mui/material';
 import './styles/Post.css'
 import { db  } from './firebase'
 import firebase from 'firebase/compat/app';
@@ -111,14 +112,14 @@ export default function Post({ user , postId , username , caption , img }){
                         value={comment}
                         onChange={(e) => setComment(e.target.value) }
                     />
-                    <button
+                    <Button
                         className="comment-btn"
                         disabled={!comment}
                         type="submit"
                         onClick={postComment}
                     >
                         Post
-                    </button>
+                    </Button>
                     </form>)
                 }
             </div>

@@ -75,7 +75,7 @@ export default function ImageUpload({username}){
     return(
         <div>
 
-            <Button onClick={()=> setOpen(true)} > Upload </Button>
+            <button onClick={()=> setOpen(true)} > Upload </button>
 
             <Modal
                 open={open}

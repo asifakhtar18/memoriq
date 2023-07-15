@@ -32,6 +32,10 @@ export default function Header(){
         p: 4,
 
     };
+
+    const signInStyle = {
+        backgroundColor: "rgb(175, 8, 8)"
+    }
       
 
     const signUp = (event) => {
@@ -115,31 +119,34 @@ export default function Header(){
             
             <div className='buttons'>
 
-                {user?.displayName?(
-                    <ImageUpload username={user.displayName} />
-                
-                    ):(
-                    <h3></h3>
-                )}
-
-
-                {user ? (
-                    <Button onClick={() => auth.signOut()}>Logout</Button>
-                    ):(
+               <div className='login-upload'>
+                    {user?.displayName?(
+                        <ImageUpload username={user.displayName} />
                     
-                    <div>
-                        <Button onClick={() => setOpen(true)}>Sign Up</Button>
-                     <Button onClick={() => setSigninOpen(true)}>LogIn</Button>
+                        ):(
+                        <h3></h3>
+                        )}
 
-                    </div>
+
+                    {user ? (
+                        <button onClick={() => auth.signOut()}>Logout</button>
+                        ):(
+                    
+                        <div className='auth'>
+                        <button style={signInStyle} onClick={() => setOpen(true)}>Sign Up</button>
+                        <button onClick={() => setSigninOpen(true)}>LogIn</button>
+
+                        </div>
                 
                 
-                )}
+                    )}
 
-                <Profile user={user} />
+               
+                </div> 
 
             
-            </div>
+
+            <Profile user={user} />
 
             
             <Modal
@@ -165,7 +172,7 @@ export default function Header(){
                         onChange={(e) => setPassword(e.target.value)}
                      />
 
-                     <Button className='signup-button' onClick={signIn}>Login</Button>
+                     <button className='signup-button' onClick={signIn}>Login</button>
                 </form>        
             </Box>
             </Modal>
@@ -190,7 +197,7 @@ export default function Header(){
                         type='text'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                     />
+                        />
                      <Input 
                         placeholder='username'
                         type='text'
@@ -202,7 +209,7 @@ export default function Header(){
                         type='password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                     />
+                        />
 
                      <Button className='signup-button' onClick={signUp}>SignUp</Button>
                 </form>
@@ -216,6 +223,7 @@ export default function Header(){
             
 
             
+        </div>
            
         </header>
     )

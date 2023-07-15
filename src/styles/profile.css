@@ -1,33 +1,32 @@
-.side-bar{
-    background-color: #DECBCB;
-    width: auto;
-    height: auto;
-    left: 0;
-    top: 0;
-   
-}
-
 
 .user_name{
     display: flex;
     align-items: center;
+    padding-right: 10px;
+   
 }
 
-#no-user{
-    width: 60px;
+.no-user{
+    padding-top: 5px;
+    width: 40px;
+    margin-right: 3px;
 }
 
-.profile-avatar{
-    margin: 10px;
-}
+
 
 
 @media (max-width: 980px) {
 
-    .side-bar{   
-        position: relative;   
-        height: auto;
-        margin-bottom: 10px;
+    .profile-avatar{
+        
+        margin: 5px;
+    }
+
+    
+
+
+    .no-user{
+        width: 25px;
     }
 
 }

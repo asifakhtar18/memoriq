@@ -1,6 +1,6 @@
 .App-header{ 
-    padding-left: 25px;
-    padding-top: 10px;
+    width: 100vw;
+    padding: 5px 0 ;
     background-color: #DECBCB;
     display: flex;
     justify-content: space-between;
@@ -9,49 +9,97 @@
 
     
 }
+
+.login-upload{
+    display: flex;
+   
+}
+
+button{
+    font-size: larger;
+    background-color: transparent;
+    margin: 5px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgb(84, 130, 230);
+    box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.2), 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+   
+}
+
+button:hover {
+    /* Adjust the shadow to enhance the 3D effect on hover */
+    box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.2), 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  }
   
+button:active {
+    /* Adjust the shadow when the button is clicked */
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.2), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  }
+
 
 
 
 .buttons{
     margin: 5px;
+    margin-right: 20px;
     display: flex;
     align-items: center;
     color: black;
+    border: none;
 }
 
 
 #hero-logo{
-    width: 300px;
+    padding-left:20px ;
+    width: 200px;
   }
+
+
+
+
+
+
+
 
 @media (max-width: 660px){
 
     #hero-logo{
-        width: 95%;
-        height: 80%;
-        box-shadow: 0px 15px 4px -9px rgba(0,0,0,0.1);
+        width: 180px;
+        margin-top: -12px;
         padding: 0 ;
-        margin: 0;
-        
+        padding-left: 10px;
+       
     }
 
     .App-header{
-        padding: 0;
-        margin: 0;
+        width: 100vw;
         box-shadow: none ;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        box-shadow: 0px 15px 4px -9px rgba(0,0,0,0.1);
+        justify-content: space-between;
         align-items: center;
     }
 
+    .auth{
+        display: flex;
+    }
 
     .buttons{
-        margin-top: 5px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items:flex-end;
+        
     }
-   
 
-   
+    
+
+    button{
+        font-size: smaller;
+        padding: 0 5px;
+
+    }
 
 }

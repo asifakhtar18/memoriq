@@ -8,10 +8,10 @@ export default function Profile({ user }){
             
         <div className="side-bar">
             {user ? (<div className="user_name" >
-                 <Avatar className="profile-avatar" />
-                  <h2>{user.displayName}</h2>
+                 <img src={require("./imgs/user.png")} alt="user" className="no-user"/>
+                  <p>{user.displayName}</p>
             </div>):(
-                <img src={require('./imgs/download.png')} id="no-user" alt="No user" />
+                <img src={require('./imgs/download.png')} className="no-user" alt="No user" />
             )}
            
         </div>
